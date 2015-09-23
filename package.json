@@ -1,0 +1,15 @@
+{
+  "name": "atom-djui-syntax",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "description": "Eclips3.media + Monokai = djui",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/djui/atom-djui-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

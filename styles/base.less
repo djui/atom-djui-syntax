@@ -1,0 +1,353 @@
+@import "syntax-variables";
+
+atom-text-editor, :host {
+//background-image: url("file:///Users/uwe/Dropbox/Configs/Atom/noisy.png");
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @gray-light;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+atom-text-editor .search-results .marker .region,
+:host .search-results .marker .region {
+  background-color: transparent;
+  border: 1px solid @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .marker.current-result .region,
+:host .search-results .marker.current-result .region {
+  border: 1px solid @syntax-result-marker-color-selected;
+}
+
+.comment {
+  color: @gray-dark;
+
+  &.block {
+
+  }
+
+  &.line {
+
+    &.double-slash {
+
+    }
+
+    &.documentation {
+      font-weight: bold;
+    }
+  }
+}
+
+.keyword {
+  color: @blue-light;
+
+  &.control {
+    color: @blue-lighter;
+  }
+
+  &.operator {
+    color: @syntax-text-color;
+
+    &.sigil {
+        font-weight: bold;
+    }
+  }
+
+  &.other.special-method {
+    color: @blue-light;
+  }
+
+  &.other.unit {
+    color: @orange-dark;
+  }
+}
+
+.storage {
+
+  &.type {
+    color: @blue-light;
+
+    &.class.todo {
+      color: @yellow-light;
+      font-weight: bold;
+    }
+  }
+}
+
+.constant {
+
+  &.character.escape {
+    font-weight: bold;
+  }
+
+  &.numeric {
+    color: @yellow-light;
+    font-weight: bold;
+  }
+
+  &.other.color {
+    color: @green-dark;
+    text-decoration: underline;
+  }
+
+  &.other.symbol {
+    color: @green-dark;
+    text-decoration: underline;
+  }
+}
+
+.variable {
+  color: @green-light;
+
+  &.interpolation {
+    color: @green-light;
+    text-decoration: underline;
+  }
+
+  &.parameter.function {
+    color: @syntax-text-color;
+  }
+
+  &.go { // Exception: EVERYTHING is a variable... :-/
+    color: @syntax-text-color;
+  }
+}
+
+.invalid.illegal {
+  background-color: @unknown;
+  color: @syntax-background-color;
+}
+
+.string {
+  color: @yellow-light;
+
+  &.regexp {
+    color: @yellow-light;
+    text-decoration: underline;
+
+    .source.ruby.embedded {
+      color: @unknown;
+      text-decoration: underline;
+    }
+  }
+
+  &.other.link {
+    color: @white;
+    text-decoration: underline;
+  }
+}
+
+.punctuation {
+  &.definition {
+    &.comment {
+      color: @gray-dark;
+      font-weight: bold;
+    }
+
+    &.string,
+    &.variable,
+    &.parameters,
+    &.array {
+      font-weight: bold;
+    }
+
+    &.heading,
+    &.identity {
+      color: @unknown;
+    }
+
+    &.bold {
+      color: @unknown;
+    }
+
+    &.italic {
+      color: @unknown;
+    }
+  }
+
+  &.section.embedded {
+    color: @unknown;
+  }
+
+}
+
+.support {
+  &.class {
+    color: @unknown;
+  }
+
+  &.function  {
+    color: @red-lighter;
+    font-weight: bold;
+
+    &.built-in {
+        color: @white;
+        font-weight: bold;
+    }
+
+    &.any-method {
+      color: @unknown;
+    }
+  }
+}
+
+.entity {
+
+  &.name.function {
+    color: @red-lighter;
+    font-weight: bold;
+  }
+
+  &.name.type {
+    color: @white;
+    text-weight: bold;
+  }
+
+  &.name.class, &.name.type.class {
+    color: @unknown;
+  }
+
+  &.name.section {
+    color: @unknown;
+  }
+
+  &.name.tag {
+    color: @unknown;
+    text-decoration: underline;
+  }
+
+  &.other.inherited-class {
+    color: @green-light;
+  }
+
+  &.other.attribute-name {
+    color: @syntax-text-color;
+
+    &.id {
+      color: @unknown;
+    }
+  }
+}
+
+.meta {
+  &.class {
+    color: @unknown;
+  }
+
+  &.link {
+    color: @unknown;
+  }
+
+  &.require {
+    color: @unknown;
+  }
+
+  &.selector {
+    color: @unknown;
+  }
+
+  &.separator {
+    background-color: @unknown;
+    color: @syntax-text-color;
+  }
+}
+
+.none {
+  color: @syntax-text-color;
+}
+
+.markup {
+  &.bold {
+    color: @unknown;
+    font-weight: bold;
+  }
+
+  &.changed {
+    color: @unknown;
+  }
+
+  &.deleted {
+    color: @unknown;
+  }
+
+  &.italic {
+    color: @unknown;
+    font-style: italic;
+  }
+
+  &.heading .punctuation.definition.heading {
+    color: @unknown;
+  }
+
+  &.inserted {
+    color: @unknown;
+  }
+
+  &.list {
+    color: @unknown;
+  }
+
+  &.quote {
+    color: @unknown;
+  }
+
+  &.raw.inline {
+    color: @unknown;
+  }
+}
+
+.SOURCE.gfm .markup {
+  -webkit-font-smoothing: auto;
+  &.heading {
+    color: @unknown;
+  }
+}
+
+atom-text-editor[mini] .scroll-view,
+:host([mini]) .scroll-view {
+  padding-left: 1px;
+}
